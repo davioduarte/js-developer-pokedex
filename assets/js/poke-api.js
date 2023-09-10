@@ -15,8 +15,8 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     const abilities = pokeDetail.abilities.map((abilitySlot) => abilitySlot.ability.name)
     pokemon.abilities = abilities
 
-    pokemon.height = pokeDetail.height 
-    pokemon.weight = pokeDetail.weight
+    pokemon.height = (pokeDetail.height/10).toFixed(2) 
+    pokemon.weight = pokeDetail.weight/10
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
@@ -28,6 +28,17 @@ pokeApi.getPokemonDetail = (pokemon) => {
         .then((response) => response.json())
         .then(convertPokeApiDetailToPokemon)
 }
+
+/**
+ * Pega o detalhe do pokemon pelo número
+ */
+pokeApi.getPokemonDetailByNumber = (  numero = 1  ) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${numero}`
+    return fetch( url )
+    .then( response => response.json(  ) )
+    .then( convertPokeApiDetailToPokemon )
+}
+
 
 pokeApi.getPokemons = (offset = 0, limit = 5) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`

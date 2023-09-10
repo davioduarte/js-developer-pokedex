@@ -78,7 +78,26 @@ li {
     text-transform: capitalize;
     width: 25rem;
     height: 40rem;
+    margin: auto;
+}
+
+div .link  {
+    text-decoration: none;
+    color: #000;
+    margin-left: 100px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+#card {
     border-radius: 1rem;
+}
+
+.container-header {
+    padding-top: 0.5rem;
+    padding-left: 1rem;
 }
 
 .container-header .tipos {
@@ -86,6 +105,8 @@ li {
     font-size: 0.625rem;
     filter: brightness(1.1);
     text-align: center;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .container-header .tipos .tipo {
@@ -97,7 +118,9 @@ li {
     margin-bottom: 0.15rem;
     margin-top: 0.15rem;
 }
-
+/*
+* Área pokemon
+*/
 .pokemon-body {
     width: 24rem;
     height: 24rem;
@@ -114,6 +137,14 @@ li {
     align-items: center;
 }
 
+.pokemon > img{
+    width: 18rem;
+    height: 18rem;
+}
+
+/*
+ * Área pokeboll
+ */
 .container .pokeboll {
     position: absolute;
     z-index: 0;
@@ -121,4 +152,36 @@ li {
     height: 16.8rem;
     display: flex;
     justify-content: center;
+}
+.pokeboll > img {
+
+    opacity: 40%;
+    filter: brightness(1.5);
+    box-shadow: 7px 9px 6px black;
+    border-radius: 60%;
+}
+
+/*
+ * Área dos detalhes
+ */
+
+.peso_altura {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 1rem;
+}
+.ataques {
+    color: #fff;
+    background-color: rgb(103 103 101);
+    border-radius: 3%;
+}
+
+.ataques > span {
+    display: flex;
+    justify-content: center;
+}
+
+.ataques > li {
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
 }
